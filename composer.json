@@ -1,0 +1,52 @@
+{
+  "name": "milebits/helpers",
+  "description": "A new laravel package including helper functions for every Milebits package.",
+  "type": "library",
+  "license": "GNU-3.0-or-later",
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "authors": [
+    {
+      "name": "Hicham SADDEK",
+      "email": "h.saddek@serrahub.com",
+      "homepage": "https://linkedin.com/in/hicham-saddek",
+      "role": "Lead Developer"
+    },
+    {
+      "name": "Milebits Systems",
+      "email": "support@milebits.com",
+      "homepage": "https://os.milebits.com",
+      "role": "Project Manager"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "laravel/framework": "^6|^7|^8"
+  },
+  "require-dev": {
+    "phpunit/phpunit": ">=9.3.8"
+  },
+  "prefer-stable": true,
+  "minimum-stability": "dev",
+  "support": {
+    "email": "support@os.milebits.com"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Milebits\\Helpers\\Providers\\HelpersServiceProvider"
+      ]
+    },
+    "autoload": {
+      "files": [
+        "src/Helpers/functions.php"
+      ],
+      "psr-4": {
+        "Milebits\\Helpers\\": "src/"
+      }
+    }
+  }
+}
