@@ -34,19 +34,12 @@
   "support": {
     "email": "support@os.milebits.com"
   },
-  "extra": {
-    "laravel": {
-      "providers": [
-        "Milebits\\Helpers\\Providers\\HelpersServiceProvider"
-      ]
-    },
-    "autoload": {
-      "files": [
-        "src/Helpers/functions.php"
-      ],
-      "psr-4": {
-        "Milebits\\Helpers\\": "src/"
-      }
+  "autoload": {
+    "files": [
+      "src/Helpers/functions.php"
+    ],
+    "psr-4": {
+      "Milebits\\Helpers\\": "src/"
     }
   }
 }
