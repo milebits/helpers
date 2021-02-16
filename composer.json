@@ -2,7 +2,7 @@
   "name": "milebits/helpers",
   "description": "A new laravel package including helper functions for every Milebits package.",
   "type": "library",
-  "license": "GNU-3.0-or-later",
+  "license": "proprietary",
   "config": {
     "optimize-autoloader": true,
     "preferred-install": "dist",
