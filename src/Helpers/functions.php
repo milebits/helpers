@@ -54,31 +54,33 @@ if (!function_exists('constVal')) {
      */
     function constVal($class, string $constant, $default = null)
     {
-        if (!propVal($class, $constant)) return $default;
+        if (!constExists($class, $constant)) return $default;
         return constant(sprintf("%s::%s", $class, $constant)) ?? $default;
     }
 }
 
 if (!function_exists('hasTrait')) {
     /**
-     * @param string $model
+     * @param string|object $model
      * @param string $trait
      * @return bool
      */
-    function hasTrait(string $model, string $trait)
+    function hasTrait($model, string $trait)
     {
+        if (is_object($model)) $model = get_class($model);
         return in_array($trait, class_uses_recursive($model), true);
     }
 }
 
 if (!function_exists('society')) {
     /**
-     * @param mixed|Model $user
      * @param string|null $repository
+     * @param mixed|Model $user
      * @return mixed|null
      */
-    function society(Model $user, string $repository = null)
+    function society(string $repository = null, Model $user = null)
     {
+        if (is_null($user)) $user = request()->user();
         if (!hasTrait($user->getMorphClass(), "Milebits\\Society\\Concerns\\Sociable")) return null;
         if (is_null($repository)) return $user->society();
         return $user->society()->buildRepository($repository);
