@@ -27,7 +27,8 @@
     "laravel/framework": "^6|^7|^8"
   },
   "require-dev": {
-    "phpunit/phpunit": ">=9.3.8"
+    "orchestra/testbench": "^6.12",
+    "phpunit/phpunit": "^9.5"
   },
   "prefer-stable": true,
   "minimum-stability": "dev",
@@ -40,6 +41,11 @@
     ],
     "psr-4": {
       "Milebits\\Helpers\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Milebits\\Helpers\\Tests\\": "tests/"
     }
   }
 }
