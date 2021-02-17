@@ -52,4 +52,10 @@ hasTrait($object, $trait): bool
 - Example: `hasTrait($user, SoftDeletes::class)` will return true if the user has the SoftDeletes Trait.
 - Example: `hasTrait($user, HasPosts::class)` will return true if the user hasn't got the HasPosts Trait
 - Example: `hasTrait(App\Models\User, SoftDeletes::class)` will return true if the user class has the SoftDeletes Trait.
-- Example: `hasTrait(App\Models\User, HasPosts::class)` will return true if the user class hasn't got the HasPosts Trait
+- Example: `hasTrait(App\Models\User, HasPosts::class)` will return true if the user class hasn't got the HasPosts Trait.
+
+# Contributions
+If in any case while using this package, and you which to request a new functionality to it, please contact us at suggestions@os.milebits.com and mention the package you are willing to contribute or suggest a new functionality.
+
+# Vulnerabilities
+If in any case while using this package, you encounter security issues or security vulnerabilities, please do report them as soon as possible by issuing an issue here in Github or by sending an email to security@os.milebits.com with the mention **Vulnerability Report milebits/helpers** as your subject.
