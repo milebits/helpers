@@ -1,7 +1,5 @@
 <?php
 
-namespace Milebits\Helpers\Helpers;
-
 use Illuminate\Database\Eloquent\Model;
 
 if (!function_exists('constExists')) {
@@ -10,7 +8,7 @@ if (!function_exists('constExists')) {
      * @param string $constant
      * @return bool
      */
-    function constExists($class, string $constant)
+    function constExists($class, string $constant): bool
     {
         if (is_object($class)) $class = get_class($class);
         return defined(sprintf("%s::%s", $class, $constant));
@@ -27,7 +25,7 @@ if (!function_exists('propVal')) {
     function propVal(object $object, string $name, $default = null)
     {
         if (!property_exists($object, $name)) return $default;
-        return isset($object->{$name}) ? $object->{$name} : $default;
+        return $object->{$name} ?? $default;
     }
 }
 
@@ -41,7 +39,7 @@ if (!function_exists('staticPropVal')) {
     function staticPropVal(string $class, string $name, $default = null)
     {
         if (!property_exists($class, $name)) return $default;
-        return isset($class::$$name) ? $class::$$name : $default;
+        return $class::$$name;
     }
 }
 
@@ -65,7 +63,7 @@ if (!function_exists('hasTrait')) {
      * @param string $trait
      * @return bool
      */
-    function hasTrait($model, string $trait)
+    function hasTrait($model, string $trait): bool
     {
         if (is_object($model)) $model = get_class($model);
         return in_array($trait, class_uses_recursive($model), true);
